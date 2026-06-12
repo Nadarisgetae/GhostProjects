@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#111111"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(192,57,43,0.15)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  <!-- Circle background -->
+  <circle cx="256" cy="256" r="256" fill="url(#bg)"/>
+  <!-- Subtle red glow behind eye -->
+  <ellipse cx="256" cy="260" rx="120" ry="80" fill="url(#glow)"/>
+  <!-- Outer eye shape -->
+  <ellipse cx="256" cy="260" rx="120" ry="72" fill="none" stroke="#F0EDE8" stroke-width="7"/>
+  <!-- Iris -->
+  <circle cx="256" cy="260" r="38" fill="#F0EDE8"/>
+  <!-- Pupil -->
+  <circle cx="256" cy="260" r="16" fill="#000000"/>
+  <!-- Eyelash lines -->
+  <line x1="136" y1="260" x2="155" y2="222" stroke="#F0EDE8" stroke-width="5" stroke-linecap="round"/>
+  <line x1="376" y1="260" x2="357" y2="222" stroke="#F0EDE8" stroke-width="5" stroke-linecap="round"/>
+  <!-- Subtle border ring -->
+  <circle cx="256" cy="256" r="250" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+</svg>
