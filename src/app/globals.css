@@ -70,6 +70,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-color: var(--color-accent-dim) var(--color-surface);
   scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -80,6 +81,7 @@ body {
   cursor: none; /* Hide default cursor to use custom cursor */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -898,6 +900,11 @@ h1:hover {
 @media (max-width: 768px) {
   html, body {
     overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    cursor: auto;
   }
 
   #cursor,
@@ -905,18 +912,65 @@ h1:hover {
     display: none !important;
   }
 
+  /* ── Smoother, shorter reveal animations on mobile ── */
+  .reveal {
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal-left {
+    transform: translateX(-24px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal-right {
+    transform: translateX(24px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+  }
+
+  /* ── Nav — compact, touch-friendly ── */
   nav {
-    padding: 20px 24px;
+    padding: 16px 20px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-logo {
+    gap: 8px;
+    font-size: 10px;
+  }
+
+  .nav-logo svg {
+    width: 22px;
   }
 
   .nav-links {
-    gap: 24px;
+    gap: 16px;
   }
 
-  #hero,
-  .product-section,
-  .future-section {
-    padding: 100px 24px 60px;
+  .nav-links a {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    padding: 8px 4px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .nav-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* ── Hero — immersive mobile layout ── */
+  #hero {
+    flex-direction: column;
+    justify-content: center;
+    gap: 36px;
+    padding: 120px 20px 60px;
+    min-height: 100svh;
   }
 
   #thread-container {
@@ -924,15 +978,9 @@ h1:hover {
   }
 
   h1 {
-    font-size: clamp(38px, 9vw, 56px) !important;
-    line-height: 1.05 !important;
-  }
-
-  #hero {
-    flex-direction: column;
-    justify-content: center;
-    gap: 48px;
-    padding-top: 140px;
+    font-size: clamp(36px, 10vw, 52px) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -0.02em !important;
   }
 
   .hero-content {
@@ -943,25 +991,75 @@ h1:hover {
     align-items: center;
   }
 
+  .hero-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    margin-bottom: 24px;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    line-height: 1.75;
+    margin: 24px 0 40px;
+    max-width: 300px;
+    color: var(--color-text-secondary);
+  }
+
   .hero-video-wrap {
-    width: 100%;
-    max-width: 100%;
-    height: 340px;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
+    max-width: none;
+    height: 280px;
     transform: none !important;
+    border-radius: 0;
+    -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 85%);
+    mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 85%);
+  }
+
+  .scroll-cta {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* ── Product Section ── */
+  .product-section {
+    padding: 72px 20px;
+    min-height: auto;
   }
 
   .product-inner {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
+  }
+
+  .product-label {
+    font-size: 9px;
+    margin-bottom: 20px;
+  }
+
+  .product-tagline {
+    font-size: 10px;
+    letter-spacing: 0.2em;
   }
 
   .product-desc {
     max-width: 100%;
+    font-size: 14px;
+    line-height: 1.8;
     margin-bottom: 32px;
   }
 
   .browser-mockup {
     transform: none !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+  }
+
+  .browser-body {
+    padding: 40px 24px;
+    min-height: 200px;
   }
 
   .btn-group {
@@ -976,27 +1074,88 @@ h1:hover {
     justify-content: center;
   }
 
+  .btn-primary {
+    padding: 16px 28px;
+    font-size: 11px;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:active {
+    transform: scale(0.97);
+  }
+
+  .btn-secondary {
+    padding: 12px 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* ── Future Section ── */
+  .future-section {
+    padding: 72px 20px;
+    min-height: auto;
+  }
+
   .future-inner {
     grid-template-columns: 1fr;
     gap: 40px;
     text-align: center;
   }
 
+  .future-text h2 {
+    font-size: clamp(26px, 7vw, 36px);
+  }
+
+  .future-text p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .future-spider img {
+    width: 120px;
+  }
+
   .future-tagline {
     text-align: center;
   }
 
+  .future-tagline p {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+  }
+
+  .lock-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* ── Dividers — subtler on mobile ── */
+  .divider {
+    opacity: 0.15;
+  }
+
+  /* ── Footer ── */
   footer {
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
     text-align: center;
+    padding: 32px 20px;
+  }
+
+  .footer-links {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-links a {
+    font-size: 9px;
+    padding: 8px 4px;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .scroll-dots {
     display: none;
-  }
-  body {
-    cursor: auto;
   }
 }
 
@@ -1512,21 +1671,47 @@ td.no {
 /* RESPONSIVE SPECIFICS FOR BROWSER PROFILE */
 @media (max-width: 768px) {
   .browser-header {
-    padding: 16px 24px;
+    padding: 16px 20px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .back-link {
+    font-size: 10px;
+    gap: 6px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .status-badge {
+    font-size: 9px;
+    padding: 5px 10px;
   }
   
   .browser-content-container {
-    padding: 40px 24px;
+    padding: 32px 20px;
+  }
+
+  .browser-hero {
+    margin-bottom: 36px;
+  }
+
+  .browser-hero h1 {
+    font-size: clamp(32px, 9vw, 48px);
+  }
+
+  .browser-hero .subtitle {
+    font-size: 11px;
+    letter-spacing: 0.2em;
   }
   
   .grid-2 {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
   }
   
   .features-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 16px;
   }
   
   .ghoststack-grid {
@@ -1542,19 +1727,31 @@ td.no {
     width: 100%;
     text-align: center;
     justify-content: center;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .card {
-    padding: 24px;
+    padding: 22px 18px;
+    border-radius: 10px;
   }
 
   .terminal-body {
-    padding: 16px;
+    padding: 14px;
+    font-size: 11px;
   }
 
   th, td {
-    padding: 12px 16px;
-    font-size: 12px;
+    padding: 10px 14px;
+    font-size: 11px;
+  }
+
+  .browser-page-bg {
+    padding-bottom: 60px;
+  }
+
+  .browser-footer-links {
+    padding: 28px 20px;
+    font-size: 8px;
   }
 }
 
@@ -1996,21 +2193,21 @@ td.no {
 
 @media (max-width: 768px) {
   .browser-header {
-    padding: 16px 24px;
+    padding: 16px 20px;
   }
   
   .browser-content-container.slim {
-    padding: 40px 24px;
+    padding: 32px 20px;
   }
   
   .overview-card {
     grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 24px;
+    gap: 14px;
+    padding: 20px;
   }
   
   .modal-content {
-    padding: 32px 24px;
+    padding: 28px 20px;
   }
 }
 
@@ -2583,85 +2780,280 @@ td.no {
 }
 
 @media (max-width: 768px) {
+  /* ── About Header ── */
   .about-header {
-    padding: 16px 24px;
+    padding: 16px 20px;
   }
 
+  /* ── About Hero ── */
   .about-hero {
-    min-height: 60vh;
-    padding: 120px 24px 80px;
+    min-height: 70svh;
+    padding: 100px 20px 64px;
+  }
+
+  .about-hero-inner {
+    max-width: 100%;
   }
 
   .about-hero h1 {
-    font-size: clamp(38px, 9vw, 56px);
-    line-height: 1.05;
+    font-size: clamp(34px, 10vw, 50px);
+    line-height: 1.02;
   }
 
+  .about-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    margin-bottom: 24px;
+  }
+
+  .about-hero-statement {
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 340px;
+  }
+
+  .about-hero-line {
+    width: 60px;
+    margin: 28px auto;
+  }
+
+  /* ── Section base ── */
   .about-section {
-    padding: 72px 24px;
+    padding: 64px 20px;
   }
 
+  .about-divider {
+    margin: 0;
+  }
+
+  .about-section h2 {
+    font-size: clamp(24px, 6vw, 36px);
+    margin-bottom: 20px;
+  }
+
+  .about-body-text {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .about-body-accent {
+    font-size: 14px;
+    padding-left: 16px;
+    margin: 24px 0;
+  }
+
+  /* ── Vision ── */
   .about-vision-layout {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 36px;
   }
 
-  .about-future-layout {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .about-future-grid {
-    grid-template-columns: 1fr 1fr;
+  .about-philosophy-list {
+    margin-top: 20px;
     gap: 12px;
   }
 
-  .about-team-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  .philosophy-item {
+    font-size: 13px;
+    gap: 12px;
   }
 
-  .team-card {
-    padding: 32px 24px;
-  }
-
+  /* ── Beliefs ── */
   .about-beliefs-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 10px;
+    margin-top: 24px;
+    margin-bottom: 32px;
   }
 
   .about-belief-item {
+    padding: 12px 16px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
     justify-content: center;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .about-belief-item:last-child {
     grid-column: span 2;
   }
 
-  .about-closing {
-    padding: 100px 24px;
+  .about-not-list {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 11px;
   }
 
-  .about-closing-words {
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
+  /* ── Project Section ── */
+  .about-project-title {
+    font-size: clamp(36px, 9vw, 56px) !important;
+  }
+
+  .about-project-tagline {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    margin-bottom: 24px;
+  }
+
+  .about-stripped-list {
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .about-project-section .about-narrow {
+    text-align: center;
+  }
+
+  .about-project-section .btn-primary {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* ── Future Section ── */
+  .about-future-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .about-future-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .future-project-card {
+    padding: 20px 16px;
+  }
+
+  .future-project-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .future-project-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .future-project-name {
+    font-size: 10px;
+    letter-spacing: 0.12em;
   }
 
   .about-built-slowly {
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-  }
-
-  .about-not-list {
-    flex-direction: column;
     gap: 6px;
+    margin-top: 48px;
+    font-size: 11px;
   }
 
-  .about-project-section .about-narrow {
-    text-align: center;
+  /* ── Team Section ── */
+  .about-team-header {
+    margin-bottom: 48px;
+  }
+
+  .about-team-header .about-label {
+    margin-bottom: 20px;
+  }
+
+  .about-team-header .about-body-text {
+    font-size: 14px;
+  }
+
+  .about-team-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .team-card {
+    padding: 28px 22px;
+    border-color: rgba(255, 255, 255, 0.05);
+    transition: border-color 0.3s ease;
+  }
+
+  .team-card-header {
+    margin-bottom: 20px;
+  }
+
+  .team-ghost-id {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    padding: 5px 12px;
+  }
+
+  .team-name {
+    font-size: 19px;
+    margin-bottom: 6px;
+  }
+
+  .team-role {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    margin-bottom: 18px;
+  }
+
+  .team-desc {
+    font-size: 13px;
+    line-height: 1.75;
+    margin-bottom: 10px;
+  }
+
+  .team-quote {
+    margin: 20px 0 0;
+    padding: 16px 18px;
+  }
+
+  .team-quote p {
+    font-size: 12px;
+    line-height: 1.75;
+  }
+
+  /* ── Philosophy Section ── */
+  .about-philosophy-beliefs {
+    gap: 14px;
+  }
+
+  .philosophy-belief-row {
+    font-size: 14px;
+    gap: 12px;
+  }
+
+  /* ── Closing Section ── */
+  .about-closing {
+    padding: 80px 20px;
+  }
+
+  .about-closing h2 {
+    font-size: clamp(28px, 8vw, 40px);
+    margin-bottom: 24px;
+  }
+
+  .about-closing-words {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 28px;
+  }
+
+  .about-closing-line {
+    width: 40px;
+    margin: 0 auto 24px;
+  }
+
+  .about-closing-tag {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+  }
+
+  /* ── About Footer ── */
+  .about-footer {
+    padding: 28px 20px;
+    font-size: 8px;
   }
 }
 
@@ -2736,4 +3128,35 @@ td.no {
 .coming-soon-modal .term-btn {
   margin: 0 auto;
   display: inline-flex;
+}
+
+/* ── Coming Soon Modal Mobile ── */
+@media (max-width: 768px) {
+  .coming-soon-modal {
+    padding: 36px 28px;
+    max-width: 340px;
+    width: 92%;
+    border-radius: 14px;
+  }
+
+  .coming-soon-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+  }
+
+  .coming-soon-modal h3 {
+    font-size: 18px;
+    letter-spacing: 0.25em;
+    margin-bottom: 12px;
+  }
+
+  .coming-soon-modal p {
+    font-size: 13px;
+    line-height: 1.75;
+    margin-bottom: 24px;
+  }
+
+  .coming-soon-modal .term-btn {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
