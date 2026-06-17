@@ -67,14 +67,14 @@ export default function GhostBrowserPage() {
     setDownloadState("decrypting");
 
     const logs = [
-      "🛡️ INITIALIZING SECURE BYPASS TUNNEL...",
-      "🔍 PROBING NETWORK FIREWALL (SIGNATURE DETECTED)...",
-      "✂️ INITIATING SPLITCAST TCP SEGMENTATION PROTOCOL...",
-      "⚡ INJECTING 50ms TLS HANDSHAKE BYTE DELAYS...",
-      "🌐 RESOLVING COMPATIBLE DNS ENVELOPE VIA DOH CONSENSUS...",
-      "🔐 BYPASS VERIFIED. CARRIER FALLBACK STABLE.",
-      "🗝️ DECRYPTING DOWNLOAD LINK SIGNATURE...",
-      "🔒 STATUS: UNLOCKED. DISPATCHING BINARY PIPELINE."
+      "▸ INITIALIZING SECURE BYPASS TUNNEL...",
+      "▸ PROBING NETWORK FIREWALL (SIGNATURE DETECTED)...",
+      "▸ INITIATING SPLITCAST TCP SEGMENTATION PROTOCOL...",
+      "▸ INJECTING 50ms TLS HANDSHAKE BYTE DELAYS...",
+      "▸ RESOLVING COMPATIBLE DNS ENVELOPE VIA DOH CONSENSUS...",
+      "◆ BYPASS VERIFIED. CARRIER FALLBACK STABLE.",
+      "◆ DECRYPTING DOWNLOAD LINK SIGNATURE...",
+      "◇ STATUS: UNLOCKED. DISPATCHING BINARY PIPELINE."
     ];
 
     let currentLogIndex = 0;
@@ -141,24 +141,24 @@ export default function GhostBrowserPage() {
             <div className="terminal-footer">
               {downloadState === "locked" && (
                 <button className="term-btn lock-btn" onClick={startDecryption}>
-                  🔒 DECRYPT SECURE PROTOCOL
+                  ▸ DECRYPT SECURE PROTOCOL
                 </button>
               )}
               {downloadState === "decrypting" && (
                 <button className="term-btn loading-btn" disabled>
-                  ⏳ CORRELATING TLS FRAGMENTS...
+                  ◌ CORRELATING TLS FRAGMENTS...
                 </button>
               )}
               {downloadState === "unlocked" && (
                 <div className="download-options-group">
                   <button className="term-btn unlock-btn pulse" onClick={handleDownloadClick}>
-                    🍎 MAC DOWNLOAD
+                    ↓ MAC DOWNLOAD
                   </button>
                   <button className="term-btn unlock-btn pulse" onClick={handleDownloadClick}>
-                    ❖ WINDOWS DOWNLOAD
+                    ↓ WINDOWS DOWNLOAD
                   </button>
                   <button className="term-btn unlock-btn pulse" onClick={handleDownloadClick}>
-                    🐧 LINUX DOWNLOAD
+                    ↓ LINUX DOWNLOAD
                   </button>
                 </div>
               )}
@@ -169,7 +169,7 @@ export default function GhostBrowserPage() {
         {/* OVERVIEW CONTENT */}
         <section className="detail-section">
           <div className="card text-card">
-            <h2>🌐 What Is Ghost Browser?</h2>
+            <h2>What Is Ghost Browser?</h2>
             <p>
               Ghost Browser is a desktop web browser built from the ground up to give you <strong>unrestricted, private, and secure access</strong> to the entire internet — no matter what network you're on. Whether you're at school, work, a hotel, or in a country with strict internet censorship, Ghost Browser is designed to get you through.
             </p>
@@ -179,92 +179,12 @@ export default function GhostBrowserPage() {
           </div>
         </section>
 
-        {/* WHAT MAKES UNIQUE */}
-        <section className="detail-section">
-          <div className="card dark-card">
-            <h2>🛡️ What Makes Ghost Browser Unique?</h2>
-            <p className="margin-bottom-md">
-              Most "privacy browsers" focus on blocking ads or hiding cookies. Ghost Browser goes far beyond that. Here's what sets it apart from every other browser on the market:
-            </p>
-            <div className="features-grid">
-              <div className="feature-subcard">
-                <h3>1. Automatic Bypass</h3>
-                <p>Detects school/corporate firewalls (Sophos, Fortinet, Zscaler) and government filters. Activates a custom evasion engine in milliseconds.</p>
-              </div>
-              <div className="feature-subcard">
-                <h3>2. No VPN Lag</h3>
-                <p>Connects directly to target websites using ECH and QUIC. Bypasses firewalls without routing traffic through third-party servers.</p>
-              </div>
-              <div className="feature-subcard">
-                <h3>3. Zero Config</h3>
-                <p>No extensions to install, no servers to subscribe to, no account creation. Fully functional the moment it's launched.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* COMPARISON MATRIX */}
-        <section className="detail-section">
-          <h2>📊 Feature Comparison Matrix</h2>
-          <div className="table-responsive">
-            <table>
-              <thead>
-                <tr>
-                  <th>Feature</th>
-                  <th>Chrome</th>
-                  <th>Brave</th>
-                  <th>Tor Browser</th>
-                  <th>Ghost Browser</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Ad & Tracker Blocking</td>
-                  <td className="no">❌ Extension</td>
-                  <td className="yes">✅ Built-in</td>
-                  <td className="yes">✅ Built-in</td>
-                  <td className="yes">✅ Built-in</td>
-                </tr>
-                <tr>
-                  <td>Fingerprint Shield</td>
-                  <td className="no">❌ None</td>
-                  <td className="warn">⚠️ Partial</td>
-                  <td className="yes">✅ Built-in</td>
-                  <td className="yes">✅ 10-Point Protection</td>
-                </tr>
-                <tr>
-                  <td>Censorship Bypass</td>
-                  <td className="no">❌ None</td>
-                  <td className="no">❌ None</td>
-                  <td className="warn">⚠️ Slow Tor</td>
-                  <td className="yes">✅ Instant Direct</td>
-                </tr>
-
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        {/* PRIVACY SHIELD DETAILS */}
-        <section className="detail-section">
-          <div className="card">
-            <h2>🕵️ Fingerprint Shield Protection</h2>
-            <div className="list-styled">
-              <div><strong>Canvas Spoofing:</strong> Adds noise to canvas image rendering outputs.</div>
-              <div><strong>WebGL Spoofing:</strong> Cycles GPU profiles to make your hardware identity anonymous.</div>
-              <div><strong>Audio Spoofing:</strong> Masks AudioContext sound signatures from trackers.</div>
-              <div><strong>User-Agent Rotation:</strong> Cycles matching browser agent headers per session.</div>
-              <div><strong>WebRTC Shield:</strong> Hides your actual internal and external IP addresses.</div>
-            </div>
-          </div>
-        </section>
-
         {/* BOTTOM CALL TO ACTION */}
         <section className="bottom-cta">
           <h2>Get Started Today</h2>
           <p>Download Ghost Browser to bypass local blockades and secure your footprint instantly.</p>
           <a href="#download" className="term-btn unlock-btn pulse" style={{ display: "inline-block", marginTop: "20px" }}>
-            📥 GO TO DOWNLOAD TERMINAL
+            GO TO DOWNLOAD TERMINAL
           </a>
         </section>
       </main>
@@ -277,7 +197,7 @@ export default function GhostBrowserPage() {
       {showComingSoon && (
         <div className="coming-soon-overlay" onClick={() => setShowComingSoon(false)}>
           <div className="coming-soon-modal" onClick={(e) => e.stopPropagation()}>
-            <div className="coming-soon-icon">🚀</div>
+            <div className="coming-soon-icon">◈</div>
             <h3>COMING SOON</h3>
             <p>Ghost Browser is currently under development.<br />Stay tuned for the official release.</p>
             <button className="term-btn lock-btn" onClick={() => setShowComingSoon(false)}>

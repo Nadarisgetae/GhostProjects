@@ -22,8 +22,8 @@
   --color-cyan: #00ffff;
 
   /* ── Typography (Next.js font variables) ── */
-  --font-body: var(--font-space-grotesk), system-ui, sans-serif;
-  --font-mono: var(--font-space-mono), 'SF Mono', 'Fira Code', monospace;
+  --font-body: var(--font-space-grotesk), 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-space-mono), 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
 
   /* ── Spacing ── */
   --space-xs: 0.25rem;
@@ -299,16 +299,16 @@ nav {
 /* ── HERO VIDEO ── */
 .hero-video-wrap {
   flex: 1;
-  max-width: 600px;
-  height: 400px;
+  max-width: 720px;
+  height: 520px;
   position: relative;
   overflow: hidden;
   border: none;
   z-index: 2;
   
   /* Mask/fade the edges of the video into the background */
-  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 0) 75%);
-  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 0) 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 80%);
+  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 80%);
   
   transform: perspective(1000px) rotateY(-8deg) rotateX(4deg);
   transition: transform 0.8s var(--ease-out-expo);
@@ -762,13 +762,20 @@ h2 {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: #111;
-  border: 1px solid #2a2a2a;
+  background: rgba(192, 57, 43, 0.06);
+  border: 1px solid rgba(192, 57, 43, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
-  font-size: 20px;
+  color: var(--color-accent);
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.lock-icon:hover {
+  background: rgba(192, 57, 43, 0.1);
+  border-color: rgba(192, 57, 43, 0.3);
+  box-shadow: 0 0 24px rgba(192, 57, 43, 0.12);
 }
 
 /* ═══════════════════════════════════════
@@ -939,7 +946,7 @@ h1:hover {
   .hero-video-wrap {
     width: 100%;
     max-width: 100%;
-    height: 280px;
+    height: 340px;
     transform: none !important;
   }
 
@@ -1070,7 +1077,7 @@ h1:hover {
 
 .browser-hero {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 48px;
 }
 
 .browser-hero .eyebrow {
@@ -1104,7 +1111,7 @@ h1:hover {
 /* TERMINAL DOWNLOAD SYSTEM */
 .terminal-section {
   max-width: 800px;
-  margin: 0 auto 80px;
+  margin: 0 auto 60px;
 }
 
 .terminal-window {
@@ -1280,7 +1287,7 @@ h1:hover {
 }
 
 .detail-section {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .detail-section h2 {
@@ -1475,11 +1482,11 @@ td.no {
 /* BOTTOM CTA */
 .bottom-cta {
   text-align: center;
-  padding: 80px 40px;
+  padding: 72px 40px;
   background: linear-gradient(to bottom, #050505, #000);
   border: 1px solid rgba(255, 255, 255, 0.02);
   border-radius: var(--radius-lg);
-  margin-top: 60px;
+  margin-top: 0;
 }
 
 .bottom-cta h2 {
@@ -2115,7 +2122,7 @@ td.no {
 }
 
 .about-wide {
-  max-width: 1100px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -2301,21 +2308,43 @@ td.no {
   background: #080808;
   border: 1px solid rgba(255, 255, 255, 0.03);
   border-radius: var(--radius-md);
-  padding: 24px 20px;
+  padding: 28px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  transition: border-color 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo);
+  gap: 16px;
+  transition: border-color 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
 }
 
 .future-project-card:hover {
-  border-color: rgba(192, 57, 43, 0.2);
+  border-color: rgba(192, 57, 43, 0.25);
   transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(192, 57, 43, 0.06);
 }
 
 .future-project-icon {
-  font-size: 24px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  background: rgba(192, 57, 43, 0.06);
+  border: 1px solid rgba(192, 57, 43, 0.12);
+  border-radius: 12px;
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.future-project-card:hover .future-project-icon {
+  background: rgba(192, 57, 43, 0.1);
+  border-color: rgba(192, 57, 43, 0.25);
+  box-shadow: 0 0 20px rgba(192, 57, 43, 0.12);
+  transform: scale(1.08);
+}
+
+.future-project-icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .future-project-name {
@@ -2348,15 +2377,15 @@ td.no {
 
 .about-team-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
 }
 
 .team-card {
   background: #080808;
   border: 1px solid rgba(255, 255, 255, 0.03);
   border-radius: var(--radius-lg);
-  padding: 48px 40px;
+  padding: 40px 32px;
   position: relative;
   overflow: hidden;
 }
@@ -2546,6 +2575,13 @@ td.no {
    ABOUT PAGE RESPONSIVE
    ═══════════════════════════════════════ */
 
+@media (max-width: 1024px) {
+  .about-team-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
 @media (max-width: 768px) {
   .about-header {
     padding: 16px 24px;
@@ -2582,7 +2618,7 @@ td.no {
 
   .about-team-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
   }
 
   .team-card {
@@ -2677,6 +2713,8 @@ td.no {
 .coming-soon-icon {
   font-size: 48px;
   margin-bottom: 20px;
+  color: var(--color-accent);
+  line-height: 1;
 }
 
 .coming-soon-modal h3 {

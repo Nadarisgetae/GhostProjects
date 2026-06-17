@@ -216,27 +216,76 @@ export default function AboutPage() {
             </div>
             <div className="about-future-grid reveal-right">
               <div className="future-project-card">
-                <span className="future-project-icon">🤖</span>
+                <span className="future-project-icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="6" y="8" width="20" height="14" rx="3" stroke="currentColor" strokeWidth="1.3"/>
+                    <circle cx="12" cy="15" r="2" stroke="currentColor" strokeWidth="1.3"/>
+                    <circle cx="20" cy="15" r="2" stroke="currentColor" strokeWidth="1.3"/>
+                    <path d="M6 12h-2a2 2 0 0 0-2 2v0a2 2 0 0 0 2 2h2" stroke="currentColor" strokeWidth="1.3"/>
+                    <path d="M26 12h2a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2h-2" stroke="currentColor" strokeWidth="1.3"/>
+                    <path d="M12 22v4M20 22v4M10 26h4M18 26h4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+                    <path d="M10 8V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2" stroke="currentColor" strokeWidth="1.3"/>
+                  </svg>
+                </span>
                 <span className="future-project-name">Ghost AI</span>
               </div>
               <div className="future-project-card">
-                <span className="future-project-icon">☁️</span>
+                <span className="future-project-icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 20a6 6 0 0 1-.38-12A8 8 0 0 1 23.29 7 5 5 0 0 1 24 17" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+                    <path d="M8 20h16" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+                    <path d="M10 24h12M12 28h8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+                    <circle cx="16" cy="14" r="2" fill="currentColor" opacity="0.5"/>
+                  </svg>
+                </span>
                 <span className="future-project-name">Ghost Cloud</span>
               </div>
               <div className="future-project-card">
-                <span className="future-project-icon">💾</span>
+                <span className="future-project-icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="6" width="24" height="20" rx="3" stroke="currentColor" strokeWidth="1.3"/>
+                    <path d="M4 12h24" stroke="currentColor" strokeWidth="1.3"/>
+                    <circle cx="8" cy="9" r="1" fill="currentColor"/>
+                    <circle cx="12" cy="9" r="1" fill="currentColor"/>
+                    <path d="M10 18h12M10 22h8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" opacity="0.5"/>
+                    <path d="M22 16l-3 3-2-2-3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
                 <span className="future-project-name">Ghost Drive</span>
               </div>
               <div className="future-project-card">
-                <span className="future-project-icon">🔍</span>
+                <span className="future-project-icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="14" cy="14" r="8" stroke="currentColor" strokeWidth="1.3"/>
+                    <path d="M20 20l8 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+                    <circle cx="14" cy="14" r="3" stroke="currentColor" strokeWidth="1" opacity="0.3"/>
+                    <path d="M14 8v2M14 18v2M8 14h2M18 14h2" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.3"/>
+                  </svg>
+                </span>
                 <span className="future-project-name">Ghost Search</span>
               </div>
               <div className="future-project-card">
-                <span className="future-project-icon">✉️</span>
+                <span className="future-project-icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="7" width="24" height="18" rx="2" stroke="currentColor" strokeWidth="1.3"/>
+                    <path d="M4 11l12 7 12-7" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round"/>
+                    <path d="M4 25l9-7M28 25l-9-7" stroke="currentColor" strokeWidth="1" opacity="0.25" strokeLinecap="round"/>
+                    <circle cx="16" cy="17" r="1.5" fill="currentColor" opacity="0.4"/>
+                  </svg>
+                </span>
                 <span className="future-project-name">Ghost Mail</span>
               </div>
               <div className="future-project-card">
-                <span className="future-project-icon">🖥️</span>
+                <span className="future-project-icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="4" width="24" height="18" rx="2" stroke="currentColor" strokeWidth="1.3"/>
+                    <path d="M4 18h24" stroke="currentColor" strokeWidth="1.3"/>
+                    <circle cx="16" cy="20" r="1" fill="currentColor"/>
+                    <path d="M12 26h8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+                    <path d="M14 22v4M18 22v4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+                    <path d="M8 9h6M8 12h10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.3"/>
+                  </svg>
+                </span>
                 <span className="future-project-name">Ghost OS</span>
               </div>
             </div>
@@ -270,7 +319,7 @@ export default function AboutPage() {
 
           <div className="about-team-grid">
             {/* GHOST 01 */}
-            <div className="team-card reveal-left">
+            <div className="team-card reveal" style={{ transitionDelay: "0s" }}>
               <div className="team-card-header">
                 <span className="team-ghost-id">GHOST 01</span>
                 <div className="team-accent-line"></div>
@@ -289,7 +338,7 @@ export default function AboutPage() {
             </div>
 
             {/* GHOST 02 */}
-            <div className="team-card reveal-right">
+            <div className="team-card reveal" style={{ transitionDelay: "0.12s" }}>
               <div className="team-card-header">
                 <span className="team-ghost-id">GHOST 02</span>
                 <div className="team-accent-line"></div>
@@ -304,6 +353,25 @@ export default function AboutPage() {
               </p>
               <blockquote className="team-quote">
                 <p>&ldquo;Good technology disappears.<br />Great technology empowers.&rdquo;</p>
+              </blockquote>
+            </div>
+
+            {/* GHOST 03 */}
+            <div className="team-card reveal" style={{ transitionDelay: "0.24s" }}>
+              <div className="team-card-header">
+                <span className="team-ghost-id">GHOST 03</span>
+                <div className="team-accent-line"></div>
+              </div>
+              <h3 className="team-name">Aditya Nadar</h3>
+              <p className="team-role">Artificial Intelligence · Growth Strategy · Digital Ecosystems</p>
+              <p className="team-desc">
+                Focused on artificial intelligence, emerging technologies, marketing systems, and building narratives around future-facing products.
+              </p>
+              <p className="team-desc">
+                Works on connecting technology with people — combining AI, creativity, and strategic growth to transform ideas into scalable digital ecosystems.
+              </p>
+              <blockquote className="team-quote">
+                <p>&ldquo;Technology creates possibilities.<br />Vision turns them into movements.&rdquo;</p>
               </blockquote>
             </div>
           </div>
