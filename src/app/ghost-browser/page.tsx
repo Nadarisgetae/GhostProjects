@@ -165,9 +165,13 @@ export default function GhostBrowserPage() {
                   >
                     ↓ WINDOWS DOWNLOAD
                   </a>
-                  <button className="term-btn unlock-btn pulse" onClick={handleDownloadClick}>
+                  <a
+                    href="https://github.com/idaxon/ghost-browser/releases/download/v1.0.2/ghost-browser_1.0.0_amd64.deb"
+                    className="term-btn unlock-btn pulse"
+                    style={{ display: "inline-flex", alignItems: "center", justifyContent: "center" }}
+                  >
                     ↓ LINUX DOWNLOAD
-                  </button>
+                  </a>
                 </div>
               )}
             </div>

@@ -324,7 +324,16 @@ export default function AboutPage() {
                 <span className="team-ghost-id">GHOST 01</span>
                 <div className="team-accent-line"></div>
               </div>
-              <h3 className="team-name">Ashish Goyal</h3>
+              <h3 className="team-name" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <a href="https://www.linkedin.com/in/ashishgoyal367/" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", color: "inherit", opacity: 0.8 }} className="linkedin-link">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: "opacity 0.2s, color 0.2s" }} onMouseEnter={(e) => { e.currentTarget.style.color = "#0077b5"; e.currentTarget.style.opacity = "1"; }} onMouseLeave={(e) => { e.currentTarget.style.color = "currentColor"; e.currentTarget.style.opacity = "0.8"; }}>
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </a>
+                Ashish Goyal
+              </h3>
               <p className="team-role">Cybersecurity · Core Systems · Network Architecture</p>
               <p className="team-desc">
                 Focused on cybersecurity, infrastructure, secure systems, privacy architecture, and the deep technical foundation behind Ghost Projects.
@@ -343,7 +352,16 @@ export default function AboutPage() {
                 <span className="team-ghost-id">GHOST 02</span>
                 <div className="team-accent-line"></div>
               </div>
-              <h3 className="team-name">Daksh Mishra</h3>
+              <h3 className="team-name" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <a href="https://www.linkedin.com/in/daksh-mishra-5a036b2b1/" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", color: "inherit", opacity: 0.8 }} className="linkedin-link">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: "opacity 0.2s, color 0.2s" }} onMouseEnter={(e) => { e.currentTarget.style.color = "#0077b5"; e.currentTarget.style.opacity = "1"; }} onMouseLeave={(e) => { e.currentTarget.style.color = "currentColor"; e.currentTarget.style.opacity = "0.8"; }}>
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </a>
+                Daksh Mishra
+              </h3>
               <p className="team-role">Product Vision · Design Systems · Project Architecture</p>
               <p className="team-desc">
                 Focused on ecosystem planning, product direction, design systems, experience architecture, and building the long-term vision behind Ghost Projects.
@@ -362,7 +380,16 @@ export default function AboutPage() {
                 <span className="team-ghost-id">GHOST 03</span>
                 <div className="team-accent-line"></div>
               </div>
-              <h3 className="team-name">Aditya Nadar</h3>
+              <h3 className="team-name" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <a href="https://www.linkedin.com/in/aditya-nadar/" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", color: "inherit", opacity: 0.8 }} className="linkedin-link">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: "opacity 0.2s, color 0.2s" }} onMouseEnter={(e) => { e.currentTarget.style.color = "#0077b5"; e.currentTarget.style.opacity = "1"; }} onMouseLeave={(e) => { e.currentTarget.style.color = "currentColor"; e.currentTarget.style.opacity = "0.8"; }}>
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </a>
+                Aditya Nadar
+              </h3>
               <p className="team-role">Artificial Intelligence · Growth Strategy · Digital Ecosystems</p>
               <p className="team-desc">
                 Focused on artificial intelligence, emerging technologies, marketing systems, and building narratives around future-facing products.
