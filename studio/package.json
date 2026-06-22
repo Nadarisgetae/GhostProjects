@@ -1,0 +1,19 @@
+{
+  "name": "ghost-projects-studio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "start": "sanity start",
+    "deploy": "sanity deploy"
+  },
+  "dependencies": {
+    "@sanity/cli": "^6.0.0",
+    "@sanity/vision": "^5.0.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "sanity": "^5.0.0",
+    "styled-components": "^6.4.2"
+  }
+}

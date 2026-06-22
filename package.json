@@ -9,16 +9,21 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.2.9",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "@portabletext/react": "^3.0.0",
+    "@portabletext/types": "^4.0.2",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^5.31.1",
+    "next": "^16.2.9",
+    "next-sanity": "^13.1.1",
+    "react": "^19.2.2",
+    "react-dom": "^19.2.2",
+    "sanity": "^5.31.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.9",
     "typescript": "^5"
   }
 }

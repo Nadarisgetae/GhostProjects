@@ -41,6 +41,7 @@ export default function Navbar() {
           <Link href="/#projects">PROJECTS</Link>
         )}
         <Link href="/about">ABOUT</Link>
+        <Link href="/blog">Blog</Link>
         <div className="nav-dot"></div>
       </div>
     </nav>
