@@ -185,6 +185,7 @@ export default function Cursor() {
   useEffect(() => {
     const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
     if (!mq.matches) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsDesktop(true);
 
     const saved = localStorage.getItem("cursor-sensitivity");

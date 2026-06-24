@@ -89,9 +89,6 @@ export default function GhostBrowserPage() {
     }, 450);
   };
 
-  const handleDownloadClick = () => {
-    setShowComingSoon(true);
-  };
 
   return (
     <div className="browser-page-bg">
@@ -183,10 +180,10 @@ export default function GhostBrowserPage() {
           <div className="card text-card">
             <h2>What Is Ghost Browser?</h2>
             <p>
-              Ghost Browser is a desktop web browser built from the ground up to give you <strong>unrestricted, private, and secure access</strong> to the entire internet — no matter what network you're on. Whether you're at school, work, a hotel, or in a country with strict internet censorship, Ghost Browser is designed to get you through.
+              Ghost Browser is a desktop web browser built from the ground up to give you <strong>unrestricted, private, and secure access</strong> to the entire internet — no matter what network you&apos;re on. Whether you&apos;re at school, work, a hotel, or in a country with strict internet censorship, Ghost Browser is designed to get you through.
             </p>
             <p className="highlight-p">
-              It's not a VPN. It's not Tor. It's something entirely new.
+              It&apos;s not a VPN. It&apos;s not Tor. It&apos;s something entirely new.
             </p>
           </div>
         </section>

@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 
 const components = {
   types: {
-    image: ({ value }: any) => {
+    image: ({ value }: { value: { asset?: { _ref?: string }; alt?: string } }) => {
       if (!value?.asset?._ref) return null
       return (
         <img
